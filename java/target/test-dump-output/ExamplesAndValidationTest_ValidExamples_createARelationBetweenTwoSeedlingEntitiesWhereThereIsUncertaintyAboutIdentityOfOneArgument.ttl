@@ -1,0 +1,161 @@
+@prefix ldcOnt: <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix aida:  <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/InterchangeOntology#> .
+@prefix ldc:   <https://github.com/NextCenturyCorporation/AIDA-Interchange-Format/LdcAnnotations#> .
+
+ldc:E779954.00004  a  aida:Entity ;
+        aida:system  ldc:testSystem .
+
+ldc:assertion-3  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       ldcOnt:GeopoliticalEntity ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:E779954.00004 ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:E781167.00398  a  aida:Entity ;
+        aida:system  ldc:testSystem .
+
+ldc:assertion-1  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       ldcOnt:Person ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:E781167.00398 ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:R779959.00000  a  aida:Relation ;
+        aida:system  ldc:testSystem .
+
+ldc:assertion-5  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       ldcOnt:Physical.Resident ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:R779959.00000 ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+[ a                rdf:Statement , aida:ArgumentStatement ;
+  rdf:object       ldc:entity-1 ;
+  rdf:predicate    ldcOnt:Physical.Resident_Place ;
+  rdf:subject      ldc:R779959.00000 ;
+  aida:confidence  [ a                     aida:Confidence ;
+                     aida:confidenceValue  "1.0"^^xsd:double ;
+                     aida:system           ldc:testSystem
+                   ] ;
+  aida:system      ldc:testSystem
+] .
+
+[ a                rdf:Statement , aida:ArgumentStatement ;
+  rdf:object       ldc:E781167.00398 ;
+  rdf:predicate    ldcOnt:Physical.Resident_Resident ;
+  rdf:subject      ldc:R779959.00000 ;
+  aida:confidence  [ a                     aida:Confidence ;
+                     aida:confidenceValue  "1.0"^^xsd:double ;
+                     aida:system           ldc:testSystem
+                   ] ;
+  aida:system      ldc:testSystem
+] .
+
+ldc:cluster-1  a        aida:SameAsCluster ;
+        aida:prototype  ldc:E779954.00004 ;
+        aida:system     ldc:testSystem .
+
+ldc:cluster-2  a        aida:SameAsCluster ;
+        aida:prototype  ldc:E779954.00004 ;
+        aida:system     ldc:testSystem .
+
+ldc:entity-1  a      aida:Entity ;
+        aida:system  ldc:testSystem .
+
+ldc:assertion-4  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       ldcOnt:GeopoliticalEntity ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:entity-1 ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:testSystem  a  aida:System .
+
+[ a                 aida:MutualExclusion ;
+  aida:alternative  [ a                      aida:MutualExclusionAlternative ;
+                      aida:alternativeGraph  [ a                      aida:Subgraph ;
+                                               aida:subgraphContains  [ a                   aida:ClusterMembership ;
+                                                                        aida:cluster        ldc:cluster-1 ;
+                                                                        aida:clusterMember  ldc:entity-1 ;
+                                                                        aida:confidence     [ a                     aida:Confidence ;
+                                                                                              aida:confidenceValue  "0.4"^^xsd:double ;
+                                                                                              aida:system           ldc:testSystem
+                                                                                            ] ;
+                                                                        aida:system         ldc:testSystem
+                                                                      ]
+                                             ] ;
+                      aida:confidence        [ a                     aida:Confidence ;
+                                               aida:confidenceValue  "0.6"^^xsd:double ;
+                                               aida:system           ldc:testSystem
+                                             ]
+                    ] ;
+  aida:alternative  [ a                      aida:MutualExclusionAlternative ;
+                      aida:alternativeGraph  [ a                      aida:Subgraph ;
+                                               aida:subgraphContains  [ a                   aida:ClusterMembership ;
+                                                                        aida:cluster        ldc:cluster-2 ;
+                                                                        aida:clusterMember  ldc:entity-1 ;
+                                                                        aida:confidence     [ a                     aida:Confidence ;
+                                                                                              aida:confidenceValue  "0.6"^^xsd:double ;
+                                                                                              aida:system           ldc:testSystem
+                                                                                            ] ;
+                                                                        aida:system         ldc:testSystem
+                                                                      ]
+                                             ] ;
+                      aida:confidence        [ a                     aida:Confidence ;
+                                               aida:confidenceValue  "0.4"^^xsd:double ;
+                                               aida:system           ldc:testSystem
+                                             ]
+                    ] ;
+  aida:system       ldc:testSystem
+] .
+
+[ a                   aida:ClusterMembership ;
+  aida:cluster        ldc:cluster-1 ;
+  aida:clusterMember  ldc:E779954.00004 ;
+  aida:confidence     [ a                     aida:Confidence ;
+                        aida:confidenceValue  "1.0"^^xsd:double ;
+                        aida:system           ldc:testSystem
+                      ] ;
+  aida:system         ldc:testSystem
+] .
+
+[ a                   aida:ClusterMembership ;
+  aida:cluster        ldc:cluster-2 ;
+  aida:clusterMember  ldc:E779954.00004 ;
+  aida:confidence     [ a                     aida:Confidence ;
+                        aida:confidenceValue  "1.0"^^xsd:double ;
+                        aida:system           ldc:testSystem
+                      ] ;
+  aida:system         ldc:testSystem
+] .
+
+######################################################
+# Duplicates: The equivalent of these nodes is already represented above
+######################################################
+
+ldc:assertion-2  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       ldcOnt:GeopoliticalEntity ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:E779954.00004 ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .

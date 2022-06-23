@@ -1,0 +1,107 @@
+@prefix ldcOnt: <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix aida:  <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/InterchangeOntology#> .
+@prefix ldc:   <https://github.com/NextCenturyCorporation/AIDA-Interchange-Format/LdcAnnotations#> .
+
+ldc:entity-1  a           aida:Entity ;
+        aida:justifiedBy  _:b0 , _:b1 , _:b2 , _:b3 , _:b4 , _:b5 ;
+        aida:link         [ a                aida:LinkAssertion ;
+                            aida:confidence  [ a                     aida:Confidence ;
+                                               aida:confidenceValue  "0.398"^^xsd:double ;
+                                               aida:system           ldc:testSystem
+                                             ] ;
+                            aida:linkTarget  "freebase:FOO" ;
+                            aida:system      ldc:testSystem
+                          ] ;
+        aida:privateData  [ a                 aida:PrivateData ;
+                            aida:jsonContent  "{ 'privateKey' : 'privateValue' }" ;
+                            aida:system       ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+ldc:assertion-1  a        rdf:Statement , aida:TypeStatement ;
+        rdf:object        <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/LDCOntologyM36#PER> ;
+        rdf:predicate     rdf:type ;
+        rdf:subject       ldc:entity-1 ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "1.0"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:justifiedBy  _:b0 , _:b1 , _:b2 , _:b3 , _:b4 , _:b5 ;
+        aida:system       ldc:testSystem .
+
+ldc:testSystem  a  aida:System .
+
+######################################################
+# Blanks: These blank nodes are nested in more than one statement above
+######################################################
+
+_:b0    a                 aida:ImageJustification ;
+        aida:boundingBox  [ a                            aida:BoundingBox ;
+                            aida:boundingBoxLowerRightX  "167"^^xsd:int ;
+                            aida:boundingBoxLowerRightY  "98"^^xsd:int ;
+                            aida:boundingBoxUpperLeftX   "123"^^xsd:int ;
+                            aida:boundingBoxUpperLeftY   "45"^^xsd:int
+                          ] ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "0.123"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:source       "NYT_ENG_20181231_03" ;
+        aida:system       ldc:testSystem .
+
+_:b1    a                 aida:KeyFrameVideoJustification ;
+        aida:boundingBox  [ a                            aida:BoundingBox ;
+                            aida:boundingBoxLowerRightX  "345"^^xsd:int ;
+                            aida:boundingBoxLowerRightY  "101"^^xsd:int ;
+                            aida:boundingBoxUpperLeftX   "234"^^xsd:int ;
+                            aida:boundingBoxUpperLeftY   "56"^^xsd:int
+                          ] ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "0.234"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:keyFrame     "keyframe ID" ;
+        aida:source       "NYT_ENG_20181231_03" ;
+        aida:system       ldc:testSystem .
+
+_:b2    a                    aida:VideoJustification ;
+        aida:channel         aida:VideoJustificationChannelBoth ;
+        aida:confidence      [ a                     aida:Confidence ;
+                               aida:confidenceValue  "0.93"^^xsd:double ;
+                               aida:system           ldc:testSystem
+                             ] ;
+        aida:endTimestamp    "1.5"^^xsd:double ;
+        aida:source          "OTHER_VIDEO" ;
+        aida:startTimestamp  "1.1"^^xsd:double ;
+        aida:system          ldc:testSystem .
+
+_:b3    a                        aida:TextJustification ;
+        aida:confidence          [ a                     aida:Confidence ;
+                                   aida:confidenceValue  "0.973"^^xsd:double ;
+                                   aida:system           ldc:testSystem
+                                 ] ;
+        aida:endOffsetInclusive  "1033"^^xsd:int ;
+        aida:source              "HC000T6IV" ;
+        aida:startOffset         "1029"^^xsd:int ;
+        aida:system              ldc:testSystem .
+
+_:b4    a                    aida:AudioJustification ;
+        aida:confidence      [ a                     aida:Confidence ;
+                               aida:confidenceValue  "0.789"^^xsd:double ;
+                               aida:system           ldc:testSystem
+                             ] ;
+        aida:endTimestamp    "9.876"^^xsd:double ;
+        aida:source          "NYT_ENG_201181231" ;
+        aida:startTimestamp  "4.566"^^xsd:double ;
+        aida:system          ldc:testSystem .
+
+_:b5    a                aida:ShotVideoJustification ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "0.487"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:shot        "some shot ID" ;
+        aida:source      "SOME_VIDEO" ;
+        aida:system      ldc:testSystem .

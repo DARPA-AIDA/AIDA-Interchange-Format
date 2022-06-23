@@ -1,0 +1,68 @@
+@prefix ldcOnt: <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix aida:  <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/InterchangeOntology#> .
+@prefix ldc:   <https://github.com/NextCenturyCorporation/AIDA-Interchange-Format/LdcAnnotations#> .
+
+<http://www.caci.com/cluster/SameAsCluster/ClusterID1>
+        a               aida:SameAsCluster ;
+        aida:prototype  ldc:someTestURI1 ;
+        aida:system     ldc:testSystem .
+
+<http://www.caci.com/cluster/SameAsCluster/ClusterID2>
+        a               aida:SameAsCluster ;
+        aida:prototype  ldc:someTestURI2 ;
+        aida:system     ldc:testSystem .
+
+<http://www.caci.com/cluster/SameAsCluster/ClusterID3>
+        a               aida:SameAsCluster ;
+        aida:prototype  ldc:someTestURI3 ;
+        aida:system     ldc:testSystem .
+
+ldc:a_minimal_claimframe
+        a                    aida:Claim ;
+        aida:associatedKEs   <http://www.caci.com/cluster/SameAsCluster/ClusterID2> , <http://www.caci.com/cluster/SameAsCluster/ClusterID3> ;
+        aida:claimSemantics  <http://www.caci.com/cluster/SameAsCluster/ClusterID1> ;
+        aida:claimTemplate   "X killed Hugo Chavez" ;
+        aida:claimer         <https://www.wikidata.org/wiki/Q48340> ;
+        aida:epistemic       aida:EpistemicUnknown ;
+        aida:naturalLanguageDescription
+                "Claimer Y claims X killed Hugo Chavez" ;
+        aida:sentiment       aida:SentimentNeutralUnknown ;
+        aida:sourceDocument  "Some source" ;
+        aida:subtopic        "Some Sub TubTopic: Who killed Hugo Chavez" ;
+        aida:system          ldc:testSystem ;
+        aida:topic           "Some Main Topic: Death of Hugo Chavez" ;
+        aida:xVariable       <https://www.wikidata.org/wiki/Q37230> .
+
+ldc:someTestURI1  a  aida:Entity ;
+        aida:system  ldc:testSystem .
+
+ldc:someTestURI2  a  aida:Entity ;
+        aida:system  ldc:testSystem .
+
+ldc:someTestURI3  a  aida:Entity ;
+        aida:system  ldc:testSystem .
+
+ldc:testSystem  a  aida:System .
+
+<https://www.wikidata.org/wiki/Q37230>
+        a                       aida:ClaimComponent ;
+        aida:componentIdentity  "Q37230" ;
+        aida:componentName      "Some Agency" ;
+        aida:componentType      "Q47913" ;
+        aida:system             ldc:testSystem .
+
+<https://www.wikidata.org/wiki/Q48340>
+        a                       aida:ClaimComponent ;
+        aida:componentIdentity  "Q48340" ;
+        aida:componentName      "Some News Outlet" ;
+        aida:componentType      "Q7892363" ;
+        aida:system             ldc:testSystem .
+
+<https://www.wikidata.org/wiki/Q717>
+        a                       aida:ClaimComponent ;
+        aida:componentIdentity  "Q717" ;
+        aida:componentName      "Some Country" ;
+        aida:componentType      "Q3624078" ;
+        aida:system             ldc:testSystem .

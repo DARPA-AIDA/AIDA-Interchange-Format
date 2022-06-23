@@ -1,0 +1,50 @@
+@prefix :      <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/AidaDomainOntologiesCommon#> .
+@prefix schema: <http://schema.org/> .
+@prefix olia:  <http://purl.org/olia/system.owl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix aida:  <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/InterchangeOntology#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix ldc:   <https://github.com/NextCenturyCorporation/AIDA-Interchange-Format/LdcAnnotations#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ldcOnt: <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#> .
+@prefix aidaDomainCommon: <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/AidaDomainOntologiesCommon#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+[ a            sh:ValidationReport ;
+  sh:conforms  false ;
+  sh:result    [ a                             sh:ValidationResult ;
+                 sh:focusNode                  ldcOnt:unknown_type ;
+                 sh:resultMessage              "Does not have value aidaDomainCommon:RelationType" ;
+                 sh:resultPath                 [ sh:alternativePath
+                                   ( [ sh:oneOrMorePath  rdfs:subClassOf ]
+                                     ( rdf:type
+                                       [ sh:zeroOrMorePath  rdfs:subClassOf ]
+                                     )
+                                   ) ] ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraintComponent  sh:HasValueConstraintComponent ;
+                 sh:sourceShape                aida:RelationSubclass
+               ] ;
+  sh:result    [ a                             sh:ValidationResult ;
+                 sh:focusNode                  ldcOnt:unknown_type ;
+                 sh:resultMessage              "Property needs to have at least 1 values, but found 0" ;
+                 sh:resultPath                 [ sh:alternativePath
+                                   ( [ sh:oneOrMorePath  rdfs:subClassOf ]
+                                     ( rdf:type
+                                       [ sh:zeroOrMorePath  rdfs:subClassOf ]
+                                     )
+                                   ) ] ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent ;
+                 sh:sourceShape                aida:RelationSubclass
+               ]
+] .
+
+######################################################
+# Blanks: These blank nodes are nested in more than one statement above
+######################################################

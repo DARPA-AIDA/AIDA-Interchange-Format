@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.ncc.aif.ExamplesAndValidationTest
+-------------------------------------------------------------------------------
+Tests run: 55, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 3.689 s - in com.ncc.aif.ExamplesAndValidationTest

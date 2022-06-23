@@ -1,0 +1,79 @@
+@prefix ldcOnt: <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix aida:  <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/InterchangeOntology#> .
+@prefix ldc:   <https://github.com/NextCenturyCorporation/AIDA-Interchange-Format/LdcAnnotations#> .
+
+ldc:E781167.00398  a      aida:Entity ;
+        aida:justifiedBy  _:b0 , _:b1 ;
+        aida:system       ldc:testSystem .
+
+ldc:assertion-2  a        rdf:Statement , aida:TypeStatement ;
+        rdf:object        ldcOnt:GeopoliticalEntity ;
+        rdf:predicate     rdf:type ;
+        rdf:subject       ldc:E781167.00398 ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "0.2"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:justifiedBy  _:b1 ;
+        aida:system       ldc:testSystem .
+
+ldc:assertion-1  a        rdf:Statement , aida:TypeStatement ;
+        rdf:object        ldcOnt:Person ;
+        rdf:predicate     rdf:type ;
+        rdf:subject       ldc:E781167.00398 ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "0.5"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:justifiedBy  _:b0 ;
+        aida:system       ldc:testSystem .
+
+ldc:testSystem  a  aida:System .
+
+[ a                 aida:MutualExclusion ;
+  aida:alternative  [ a                      aida:MutualExclusionAlternative ;
+                      aida:alternativeGraph  [ a                      aida:Subgraph ;
+                                               aida:subgraphContains  ldc:assertion-2
+                                             ] ;
+                      aida:confidence        [ a                     aida:Confidence ;
+                                               aida:confidenceValue  "0.2"^^xsd:double ;
+                                               aida:system           ldc:testSystem
+                                             ]
+                    ] ;
+  aida:alternative  [ a                      aida:MutualExclusionAlternative ;
+                      aida:alternativeGraph  [ a                      aida:Subgraph ;
+                                               aida:subgraphContains  ldc:assertion-1
+                                             ] ;
+                      aida:confidence        [ a                     aida:Confidence ;
+                                               aida:confidenceValue  "0.5"^^xsd:double ;
+                                               aida:system           ldc:testSystem
+                                             ]
+                    ] ;
+  aida:system       ldc:testSystem
+] .
+
+######################################################
+# Blanks: These blank nodes are nested in more than one statement above
+######################################################
+
+_:b0    a                        aida:TextJustification ;
+        aida:confidence          [ a                     aida:Confidence ;
+                                   aida:confidenceValue  "0.973"^^xsd:double ;
+                                   aida:system           ldc:testSystem
+                                 ] ;
+        aida:endOffsetInclusive  "1033"^^xsd:int ;
+        aida:source              "HC000T6IV" ;
+        aida:startOffset         "1029"^^xsd:int ;
+        aida:system              ldc:testSystem .
+
+_:b1    a                        aida:TextJustification ;
+        aida:confidence          [ a                     aida:Confidence ;
+                                   aida:confidenceValue  "0.3"^^xsd:double ;
+                                   aida:system           ldc:testSystem
+                                 ] ;
+        aida:endOffsetInclusive  "367"^^xsd:int ;
+        aida:source              "NYT_ENG_201181231" ;
+        aida:startOffset         "343"^^xsd:int ;
+        aida:system              ldc:testSystem .

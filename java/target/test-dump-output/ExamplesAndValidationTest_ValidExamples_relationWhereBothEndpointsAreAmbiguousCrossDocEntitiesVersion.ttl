@@ -1,0 +1,378 @@
+@prefix ldcOnt: <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix aida:  <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/InterchangeOntology#> .
+@prefix ldc:   <https://github.com/NextCenturyCorporation/AIDA-Interchange-Format/LdcAnnotations#> .
+
+ldc:cluster-1  a        aida:SameAsCluster ;
+        aida:prototype  ldc:entity-michelleObama ;
+        aida:system     ldc:testSystem .
+
+ldc:cluster-2  a        aida:SameAsCluster ;
+        aida:prototype  ldc:entity-barackObama ;
+        aida:system     ldc:testSystem .
+
+ldc:cluster-3  a        aida:SameAsCluster ;
+        aida:prototype  ldc:entity-billClinton ;
+        aida:system     ldc:testSystem .
+
+ldc:cluster-4  a        aida:SameAsCluster ;
+        aida:prototype  ldc:entity-hillaryClinton ;
+        aida:system     ldc:testSystem .
+
+ldc:entity-barackObama
+        a                 aida:Entity ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "1"^^xsd:int ;
+                            aida:source              "doc1" ;
+                            aida:startOffset         "0"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "1"^^xsd:int ;
+                            aida:source              "doc2" ;
+                            aida:startOffset         "0"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+ldc:assertion-2  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       ldcOnt:Person ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:entity-barackObama ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:entity-billClinton
+        a                 aida:Entity ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "1"^^xsd:int ;
+                            aida:source              "doc3" ;
+                            aida:startOffset         "0"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+ldc:assertion-5  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       ldcOnt:Person ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:entity-billClinton ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:entity-hillaryClinton
+        a                 aida:Entity ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "1"^^xsd:int ;
+                            aida:source              "doc3" ;
+                            aida:startOffset         "0"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+ldc:assertion-6  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       ldcOnt:Person ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:entity-hillaryClinton ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:entity-michelleObama
+        a                 aida:Entity ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "1"^^xsd:int ;
+                            aida:source              "doc1" ;
+                            aida:startOffset         "0"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "1"^^xsd:int ;
+                            aida:source              "doc1" ;
+                            aida:startOffset         "0"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+ldc:assertion-1  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       ldcOnt:Person ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:entity-michelleObama ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:entity-presidentObama
+        a                 aida:Entity ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "1"^^xsd:int ;
+                            aida:source              "doc1" ;
+                            aida:startOffset         "0"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "1"^^xsd:int ;
+                            aida:source              "doc2" ;
+                            aida:startOffset         "0"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "1"^^xsd:int ;
+                            aida:source              "doc2" ;
+                            aida:startOffset         "0"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+ldc:assertion-3  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       ldcOnt:Person ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:entity-presidentObama ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:entity-secretaryClinton
+        a                 aida:Entity ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "1"^^xsd:int ;
+                            aida:source              "doc2" ;
+                            aida:startOffset         "0"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "1"^^xsd:int ;
+                            aida:source              "doc3" ;
+                            aida:startOffset         "0"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+ldc:assertion-4  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       ldcOnt:Person ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:entity-secretaryClinton ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:relation-1  a         aida:Relation ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "0.75"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "10"^^xsd:int ;
+                            aida:source              "doc2" ;
+                            aida:startOffset         "0"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+ldc:assertion-7  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       ldcOnt:PersonalSocial.Business ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:relation-1 ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "0.75"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+[ a                rdf:Statement , aida:ArgumentStatement ;
+  rdf:object       ldc:entity-presidentObama ;
+  rdf:predicate    ldcOnt:PersonalSocial.Business_Person ;
+  rdf:subject      ldc:relation-1 ;
+  aida:confidence  [ a                     aida:Confidence ;
+                     aida:confidenceValue  "0.75"^^xsd:double ;
+                     aida:system           ldc:testSystem
+                   ] ;
+  aida:system      ldc:testSystem
+] .
+
+[ a                rdf:Statement , aida:ArgumentStatement ;
+  rdf:object       ldc:entity-secretaryClinton ;
+  rdf:predicate    ldcOnt:PersonalSocial.Business_Person ;
+  rdf:subject      ldc:relation-1 ;
+  aida:confidence  [ a                     aida:Confidence ;
+                     aida:confidenceValue  "0.75"^^xsd:double ;
+                     aida:system           ldc:testSystem
+                   ] ;
+  aida:system      ldc:testSystem
+] .
+
+ldc:testSystem  a  aida:System .
+
+[ a                 aida:MutualExclusion ;
+  aida:alternative  [ a                      aida:MutualExclusionAlternative ;
+                      aida:alternativeGraph  [ a                      aida:Subgraph ;
+                                               aida:subgraphContains  [ a                   aida:ClusterMembership ;
+                                                                        aida:cluster        ldc:cluster-1 ;
+                                                                        aida:clusterMember  ldc:entity-presidentObama ;
+                                                                        aida:confidence     [ a                     aida:Confidence ;
+                                                                                              aida:confidenceValue  "0.5"^^xsd:double ;
+                                                                                              aida:system           ldc:testSystem
+                                                                                            ] ;
+                                                                        aida:system         ldc:testSystem
+                                                                      ]
+                                             ] ;
+                      aida:confidence        [ a                     aida:Confidence ;
+                                               aida:confidenceValue  "0.5"^^xsd:double ;
+                                               aida:system           ldc:testSystem
+                                             ]
+                    ] ;
+  aida:alternative  [ a                      aida:MutualExclusionAlternative ;
+                      aida:alternativeGraph  [ a                      aida:Subgraph ;
+                                               aida:subgraphContains  [ a                   aida:ClusterMembership ;
+                                                                        aida:cluster        ldc:cluster-2 ;
+                                                                        aida:clusterMember  ldc:entity-presidentObama ;
+                                                                        aida:confidence     [ a                     aida:Confidence ;
+                                                                                              aida:confidenceValue  "0.5"^^xsd:double ;
+                                                                                              aida:system           ldc:testSystem
+                                                                                            ] ;
+                                                                        aida:system         ldc:testSystem
+                                                                      ]
+                                             ] ;
+                      aida:confidence        [ a                     aida:Confidence ;
+                                               aida:confidenceValue  "0.5"^^xsd:double ;
+                                               aida:system           ldc:testSystem
+                                             ]
+                    ] ;
+  aida:system       ldc:testSystem
+] .
+
+[ a                 aida:MutualExclusion ;
+  aida:alternative  [ a                      aida:MutualExclusionAlternative ;
+                      aida:alternativeGraph  [ a                      aida:Subgraph ;
+                                               aida:subgraphContains  [ a                   aida:ClusterMembership ;
+                                                                        aida:cluster        ldc:cluster-3 ;
+                                                                        aida:clusterMember  ldc:entity-secretaryClinton ;
+                                                                        aida:confidence     [ a                     aida:Confidence ;
+                                                                                              aida:confidenceValue  "0.5"^^xsd:double ;
+                                                                                              aida:system           ldc:testSystem
+                                                                                            ] ;
+                                                                        aida:system         ldc:testSystem
+                                                                      ]
+                                             ] ;
+                      aida:confidence        [ a                     aida:Confidence ;
+                                               aida:confidenceValue  "0.5"^^xsd:double ;
+                                               aida:system           ldc:testSystem
+                                             ]
+                    ] ;
+  aida:alternative  [ a                      aida:MutualExclusionAlternative ;
+                      aida:alternativeGraph  [ a                      aida:Subgraph ;
+                                               aida:subgraphContains  [ a                   aida:ClusterMembership ;
+                                                                        aida:cluster        ldc:cluster-4 ;
+                                                                        aida:clusterMember  ldc:entity-secretaryClinton ;
+                                                                        aida:confidence     [ a                     aida:Confidence ;
+                                                                                              aida:confidenceValue  "0.5"^^xsd:double ;
+                                                                                              aida:system           ldc:testSystem
+                                                                                            ] ;
+                                                                        aida:system         ldc:testSystem
+                                                                      ]
+                                             ] ;
+                      aida:confidence        [ a                     aida:Confidence ;
+                                               aida:confidenceValue  "0.5"^^xsd:double ;
+                                               aida:system           ldc:testSystem
+                                             ]
+                    ] ;
+  aida:system       ldc:testSystem
+] .
+
+[ a                   aida:ClusterMembership ;
+  aida:cluster        ldc:cluster-1 ;
+  aida:clusterMember  ldc:entity-michelleObama ;
+  aida:confidence     [ a                     aida:Confidence ;
+                        aida:confidenceValue  "1.0"^^xsd:double ;
+                        aida:system           ldc:testSystem
+                      ] ;
+  aida:system         ldc:testSystem
+] .
+
+[ a                   aida:ClusterMembership ;
+  aida:cluster        ldc:cluster-2 ;
+  aida:clusterMember  ldc:entity-barackObama ;
+  aida:confidence     [ a                     aida:Confidence ;
+                        aida:confidenceValue  "1.0"^^xsd:double ;
+                        aida:system           ldc:testSystem
+                      ] ;
+  aida:system         ldc:testSystem
+] .
+
+[ a                   aida:ClusterMembership ;
+  aida:cluster        ldc:cluster-3 ;
+  aida:clusterMember  ldc:entity-billClinton ;
+  aida:confidence     [ a                     aida:Confidence ;
+                        aida:confidenceValue  "1.0"^^xsd:double ;
+                        aida:system           ldc:testSystem
+                      ] ;
+  aida:system         ldc:testSystem
+] .
+
+[ a                   aida:ClusterMembership ;
+  aida:cluster        ldc:cluster-4 ;
+  aida:clusterMember  ldc:entity-hillaryClinton ;
+  aida:confidence     [ a                     aida:Confidence ;
+                        aida:confidenceValue  "1.0"^^xsd:double ;
+                        aida:system           ldc:testSystem
+                      ] ;
+  aida:system         ldc:testSystem
+] .

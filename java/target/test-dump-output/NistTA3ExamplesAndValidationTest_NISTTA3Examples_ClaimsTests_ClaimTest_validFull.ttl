@@ -1,0 +1,371 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix aida:  <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/InterchangeOntology#> .
+@prefix ldc:   <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/LdcAnnotations#> .
+
+<http://www.caci.com/cluster/SameAsCluster/ClusterID1>
+        a               aida:SameAsCluster ;
+        aida:prototype  ldc:event-1 ;
+        aida:system     ldc:testSystem .
+
+<http://www.caci.com/cluster/SameAsCluster/ClusterID2>
+        a               aida:SameAsCluster ;
+        aida:prototype  ldc:event-2 ;
+        aida:system     ldc:testSystem .
+
+<http://www.caci.com/cluster/SameAsCluster/ClusterID3>
+        a               aida:SameAsCluster ;
+        aida:prototype  ldc:event-3 ;
+        aida:system     ldc:testSystem .
+
+ldc:a_full_claimframe
+        a                        aida:Claim ;
+        aida:associatedKEs       <http://www.caci.com/cluster/SameAsCluster/ClusterID2> , <http://www.caci.com/cluster/SameAsCluster/ClusterID3> ;
+        aida:claimDateTime       [ a            aida:LDCTime ;
+                                   aida:end     [ a              aida:LDCTimeComponent ;
+                                                  aida:month     "--01"^^xsd:gMonth ;
+                                                  aida:timeType  "AFTER" ;
+                                                  aida:year      "2014"^^xsd:gYear
+                                                ] ;
+                                   aida:end     [ a              aida:LDCTimeComponent ;
+                                                  aida:month     "--12"^^xsd:gMonth ;
+                                                  aida:timeType  "BEFORE" ;
+                                                  aida:year      "2014"^^xsd:gYear
+                                                ] ;
+                                   aida:start   [ a              aida:LDCTimeComponent ;
+                                                  aida:month     "--01"^^xsd:gMonth ;
+                                                  aida:timeType  "AFTER" ;
+                                                  aida:year      "2013"^^xsd:gYear
+                                                ] ;
+                                   aida:start   [ a              aida:LDCTimeComponent ;
+                                                  aida:month     "--12"^^xsd:gMonth ;
+                                                  aida:timeType  "BEFORE" ;
+                                                  aida:year      "2013"^^xsd:gYear
+                                                ] ;
+                                   aida:system  ldc:testSystem
+                                 ] ;
+        aida:claimId             "claimId" ;
+        aida:claimLocation       <https://www.wikidata.org/wiki/Q717> ;
+        aida:claimMedium         <https://www.wikidata.org/wiki/Q717> ;
+        aida:claimSemantics      <http://www.caci.com/cluster/SameAsCluster/ClusterID1> ;
+        aida:claimTemplate       "X killed Hugo Chavez" ;
+        aida:claimer             <https://www.wikidata.org/wiki/Q48340> ;
+        aida:claimerAffiliation  <https://www.wikidata.org/wiki/Q48340> ;
+        aida:epistemic           aida:EpistemicUnknown ;
+        aida:identicalClaims     "someOtherClaimID1" ;
+        aida:importance          "1.0"^^xsd:double ;
+        aida:naturalLanguageDescription
+                "Claimer Y claims X killed Hugo Chavez" ;
+        aida:queryId             "queryId" ;
+        aida:refutingClaims      "someOtherClaimID1" , "someOtherClaimID2" , "someOtherClaimID3" ;
+        aida:relatedClaims       "someOtherClaimID2" ;
+        aida:sentiment           aida:SentimentNeutralUnknown ;
+        aida:sourceDocument      "Some source" ;
+        aida:subtopic            "Some Sub TubTopic: Who killed Hugo Chavez" ;
+        aida:supportingClaims    "someOtherClaimID1" , "someOtherClaimID2" ;
+        aida:system              ldc:testSystem ;
+        aida:topic               "Some Main Topic: Death of Hugo Chavez" ;
+        aida:xVariable           <https://www.wikidata.org/wiki/Q37230> .
+
+ldc:cluster-1  a        aida:SameAsCluster ;
+        aida:prototype  ldc:entity-1 ;
+        aida:system     ldc:testSystem .
+
+ldc:entity-1  a      aida:Entity ;
+        aida:handle  "SomeBasicCluster1" ;
+        aida:system  ldc:testSystem .
+
+ldc:assertion-1  a        rdf:Statement , aida:TypeStatement ;
+        rdf:object        <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/LDCOntology#PER> ;
+        rdf:predicate     rdf:type ;
+        rdf:subject       ldc:entity-1 ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "1.0"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "12"^^xsd:int ;
+                            aida:source              "document-2" ;
+                            aida:sourceDocument      "document-1" ;
+                            aida:startOffset         "6"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+ldc:entity-2  a                        aida:Entity ;
+        aida:handle                    "EntityClusterID1" ;
+        aida:informativeJustification  _:b0 ;
+        aida:system                    ldc:testSystem .
+
+ldc:assertion-3  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#Person> ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:entity-2 ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:entity-3  a                        aida:Entity ;
+        aida:handle                    "EntityClusterID2" ;
+        aida:informativeJustification  _:b1 ;
+        aida:system                    ldc:testSystem .
+
+ldc:assertion-6  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#Person> ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:entity-3 ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:entity-4  a                        aida:Entity ;
+        aida:handle                    "EntityClusterID3" ;
+        aida:informativeJustification  _:b2 ;
+        aida:system                    ldc:testSystem .
+
+ldc:assertion-9  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#Person> ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:entity-4 ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:event-1  a                         aida:Event ;
+        aida:informativeJustification  _:b0 ;
+        aida:system                    ldc:testSystem .
+
+ldc:eventArgument-1  a   rdf:Statement , aida:ArgumentStatement ;
+        rdf:object       ldc:entity-2 ;
+        rdf:predicate    "A1_ppt_thing_bought" ;
+        rdf:subject      ldc:event-1 ;
+        aida:attributes  aida:Hedged , aida:Negated ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "0.785"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:assertion-2  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#Personnel.Elect> ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:event-1 ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:assertion-4  a        rdf:Statement , aida:TypeStatement ;
+        rdf:object        <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#Personnel.Elect_Elect> ;
+        rdf:predicate     rdf:type ;
+        rdf:subject       ldc:event-1 ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "1.0"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:justifiedBy  _:b0 ;
+        aida:system       ldc:testSystem .
+
+ldc:event-2  a                         aida:Event ;
+        aida:informativeJustification  _:b1 ;
+        aida:system                    ldc:testSystem .
+
+ldc:eventArgument-2  a   rdf:Statement , aida:ArgumentStatement ;
+        rdf:object       ldc:entity-3 ;
+        rdf:predicate    "A1_ppt_thing_bought" ;
+        rdf:subject      ldc:event-2 ;
+        aida:attributes  aida:Hedged , aida:Negated ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "0.785"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:assertion-5  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#Personnel.Elect> ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:event-2 ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:assertion-7  a        rdf:Statement , aida:TypeStatement ;
+        rdf:object        <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#Personnel.Elect_Elect> ;
+        rdf:predicate     rdf:type ;
+        rdf:subject       ldc:event-2 ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "1.0"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:justifiedBy  _:b1 ;
+        aida:system       ldc:testSystem .
+
+ldc:event-3  a                         aida:Event ;
+        aida:informativeJustification  _:b2 ;
+        aida:system                    ldc:testSystem .
+
+ldc:eventArgument-3  a   rdf:Statement , aida:ArgumentStatement ;
+        rdf:object       ldc:entity-4 ;
+        rdf:predicate    "A1_ppt_thing_bought" ;
+        rdf:subject      ldc:event-3 ;
+        aida:attributes  aida:Hedged , aida:Negated ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "0.785"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:assertion-8  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#Personnel.Elect> ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:event-3 ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:assertion-10  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object        <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#Personnel.Elect_Elect> ;
+        rdf:predicate     rdf:type ;
+        rdf:subject       ldc:event-3 ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "1.0"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:justifiedBy  _:b2 ;
+        aida:system       ldc:testSystem .
+
+ldc:testSystem  a  aida:System .
+
+<https://www.wikidata.org/wiki/Q37230>
+        a                       aida:ClaimComponent ;
+        aida:componentIdentity  "Q37230" ;
+        aida:componentName      "Some Agency" ;
+        aida:componentType      "Q47913" ;
+        aida:system             ldc:testSystem .
+
+<https://www.wikidata.org/wiki/Q48340>
+        a                       aida:ClaimComponent ;
+        aida:componentIdentity  "Q48340" ;
+        aida:componentName      "Some News Outlet" ;
+        aida:componentType      "Q7892363" ;
+        aida:system             ldc:testSystem .
+
+<https://www.wikidata.org/wiki/Q483402>
+        a                       aida:ClaimComponent ;
+        aida:componentIdentity  "Q483402" ;
+        aida:componentName      "Some News Outlet" ;
+        aida:componentType      "Q78923632" ;
+        aida:system             ldc:testSystem .
+
+<https://www.wikidata.org/wiki/Q483403>
+        a                       aida:ClaimComponent ;
+        aida:componentIdentity  "Q483403" ;
+        aida:componentName      "Some News Outlet" ;
+        aida:componentType      "Q78923633" ;
+        aida:system             ldc:testSystem .
+
+<https://www.wikidata.org/wiki/Q483404>
+        a                       aida:ClaimComponent ;
+        aida:componentIdentity  "Q483404" ;
+        aida:componentName      "Some News Outlet" ;
+        aida:componentType      "Q78923634" ;
+        aida:system             ldc:testSystem .
+
+<https://www.wikidata.org/wiki/Q717>
+        a                       aida:ClaimComponent ;
+        aida:componentIdentity  "Q717" ;
+        aida:componentName      "Some Country" ;
+        aida:componentType      "Q3624078" ;
+        aida:system             ldc:testSystem .
+
+[ a                   aida:ClusterMembership ;
+  aida:cluster        ldc:cluster-1 ;
+  aida:clusterMember  ldc:entity-1 ;
+  aida:confidence     [ a                     aida:Confidence ;
+                        aida:confidenceValue  "1.0"^^xsd:double ;
+                        aida:system           ldc:testSystem
+                      ] ;
+  aida:system         ldc:testSystem
+] .
+
+[ a                   aida:ClusterMembership ;
+  aida:cluster        ldc:cluster-1 ;
+  aida:clusterMember  ldc:entity-2 ;
+  aida:confidence     [ a                     aida:Confidence ;
+                        aida:confidenceValue  "0.75"^^xsd:double ;
+                        aida:system           ldc:testSystem
+                      ] ;
+  aida:system         ldc:testSystem
+] .
+
+[ a                   aida:ClusterMembership ;
+  aida:cluster        ldc:cluster-1 ;
+  aida:clusterMember  ldc:entity-3 ;
+  aida:confidence     [ a                     aida:Confidence ;
+                        aida:confidenceValue  "0.75"^^xsd:double ;
+                        aida:system           ldc:testSystem
+                      ] ;
+  aida:system         ldc:testSystem
+] .
+
+[ a                   aida:ClusterMembership ;
+  aida:cluster        ldc:cluster-1 ;
+  aida:clusterMember  ldc:entity-4 ;
+  aida:confidence     [ a                     aida:Confidence ;
+                        aida:confidenceValue  "0.75"^^xsd:double ;
+                        aida:system           ldc:testSystem
+                      ] ;
+  aida:system         ldc:testSystem
+] .
+
+######################################################
+# Blanks: These blank nodes are nested in more than one statement above
+######################################################
+
+_:b0    a                        aida:TextJustification ;
+        aida:confidence          [ a                     aida:Confidence ;
+                                   aida:confidenceValue  "1.0"^^xsd:double ;
+                                   aida:system           ldc:testSystem
+                                 ] ;
+        aida:endOffsetInclusive  "10"^^xsd:int ;
+        aida:source              "HC00002Z0" ;
+        aida:sourceDocument      "HC00002Z0" ;
+        aida:startOffset         "0"^^xsd:int ;
+        aida:system              ldc:testSystem .
+
+_:b1    a                        aida:TextJustification ;
+        aida:confidence          [ a                     aida:Confidence ;
+                                   aida:confidenceValue  "1.0"^^xsd:double ;
+                                   aida:system           ldc:testSystem
+                                 ] ;
+        aida:endOffsetInclusive  "10"^^xsd:int ;
+        aida:source              "HC00002Z0" ;
+        aida:sourceDocument      "HC00002Z0" ;
+        aida:startOffset         "0"^^xsd:int ;
+        aida:system              ldc:testSystem .
+
+_:b2    a                        aida:TextJustification ;
+        aida:confidence          [ a                     aida:Confidence ;
+                                   aida:confidenceValue  "1.0"^^xsd:double ;
+                                   aida:system           ldc:testSystem
+                                 ] ;
+        aida:endOffsetInclusive  "10"^^xsd:int ;
+        aida:source              "YY00002Z0" ;
+        aida:sourceDocument      "YY00002Z0" ;
+        aida:startOffset         "0"^^xsd:int ;
+        aida:system              ldc:testSystem .

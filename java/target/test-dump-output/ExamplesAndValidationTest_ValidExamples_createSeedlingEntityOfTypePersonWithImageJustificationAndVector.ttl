@@ -1,0 +1,44 @@
+@prefix ldcOnt: <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix aida:  <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/InterchangeOntology#> .
+@prefix ldc:   <https://github.com/NextCenturyCorporation/AIDA-Interchange-Format/LdcAnnotations#> .
+
+ldc:E781167.00398  a      aida:Entity ;
+        aida:justifiedBy  _:b0 ;
+        aida:privateData  [ a                 aida:PrivateData ;
+                            aida:jsonContent  "{\"vector_type\":\"https://github.com/NextCenturyCorporation/AIDA-Interchange-Format/LdcAnnotations#testSystem-personVector\",\"vector_data\":[2.0,7.5,0.2,8.1]}" ;
+                            aida:system       ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+ldc:assertion-1  a        rdf:Statement , aida:TypeStatement ;
+        rdf:object        ldcOnt:Person ;
+        rdf:predicate     rdf:type ;
+        rdf:subject       ldc:E781167.00398 ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "1.0"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:justifiedBy  _:b0 ;
+        aida:system       ldc:testSystem .
+
+ldc:testSystem  a  aida:System .
+
+######################################################
+# Blanks: These blank nodes are nested in more than one statement above
+######################################################
+
+_:b0    a                 aida:ImageJustification ;
+        aida:boundingBox  [ a                            aida:BoundingBox ;
+                            aida:boundingBoxLowerRightX  "167"^^xsd:int ;
+                            aida:boundingBoxLowerRightY  "98"^^xsd:int ;
+                            aida:boundingBoxUpperLeftX   "123"^^xsd:int ;
+                            aida:boundingBoxUpperLeftY   "45"^^xsd:int
+                          ] ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "0.123"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:source       "NYT_ENG_20181231_03" ;
+        aida:system       ldc:testSystem .

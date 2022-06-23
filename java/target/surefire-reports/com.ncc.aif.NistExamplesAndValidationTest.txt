@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.ncc.aif.NistExamplesAndValidationTest
+-------------------------------------------------------------------------------
+Tests run: 51, Failures: 1, Errors: 0, Skipped: 4, Time elapsed: 1.067 s <<< FAILURE! - in com.ncc.aif.NistExamplesAndValidationTest
+invalid  Time elapsed: 0.04 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Encountered unexpected violation: (null,http://www.w3.org/ns/shacl#SPARQLConstraintComponent,https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/InterchangeOntology#EREOneInformativeJustificationMembers) ==> expected: <true> but was: <false>
+	at com.ncc.aif.NistExamplesAndValidationTest$NISTExamples$RestrictJustification.invalid(NistExamplesAndValidationTest.java:279)
+

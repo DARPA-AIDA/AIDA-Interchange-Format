@@ -1,0 +1,158 @@
+@prefix ldcOnt: <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/SeedlingOntology#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix aida:  <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/InterchangeOntology#> .
+@prefix ldc:   <https://github.com/NextCenturyCorporation/AIDA-Interchange-Format/LdcAnnotations#> .
+
+ldc:E779954.00004  a  aida:Entity ;
+        aida:system  ldc:testSystem .
+
+ldc:assertion-3  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       ldcOnt:GeopoliticalEntity ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:E779954.00004 ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:E781167.00398  a      aida:Entity ;
+        aida:justifiedBy  _:b0 ;
+        aida:system       ldc:testSystem .
+
+ldc:assertion-2  a        rdf:Statement , aida:TypeStatement ;
+        rdf:object        ldcOnt:Person ;
+        rdf:predicate     rdf:type ;
+        rdf:subject       ldc:E781167.00398 ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "1.0"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:justifiedBy  _:b0 ;
+        aida:system       ldc:testSystem .
+
+ldc:V779961.00010  a  aida:Event ;
+        aida:system  ldc:testSystem .
+
+ldc:assertion-1  a       rdf:Statement , aida:TypeStatement ;
+        rdf:object       ldcOnt:Personnel.Elect ;
+        rdf:predicate    rdf:type ;
+        rdf:subject      ldc:V779961.00010 ;
+        aida:confidence  [ a                     aida:Confidence ;
+                           aida:confidenceValue  "1.0"^^xsd:double ;
+                           aida:system           ldc:testSystem
+                         ] ;
+        aida:system      ldc:testSystem .
+
+ldc:assertion-4  a        rdf:Statement , aida:ArgumentStatement ;
+        rdf:object        ldc:E781167.00398 ;
+        rdf:predicate     ldcOnt:Personnel.Elect_Elect ;
+        rdf:subject       ldc:V779961.00010 ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "0.785"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:justifiedBy  [ a                            aida:CompoundJustification ;
+                            aida:confidence              [ a                     aida:Confidence ;
+                                                           aida:confidenceValue  "0.321"^^xsd:double ;
+                                                           aida:system           ldc:testSystem
+                                                         ] ;
+                            aida:containedJustification  _:b0 , _:b1 ;
+                            aida:containedJustification  [ a                 aida:KeyFrameVideoJustification ;
+                                                           aida:boundingBox  [ a                            aida:BoundingBox ;
+                                                                               aida:boundingBoxLowerRightX  "345"^^xsd:int ;
+                                                                               aida:boundingBoxLowerRightY  "101"^^xsd:int ;
+                                                                               aida:boundingBoxUpperLeftX   "234"^^xsd:int ;
+                                                                               aida:boundingBoxUpperLeftY   "56"^^xsd:int
+                                                                             ] ;
+                                                           aida:confidence   [ a                     aida:Confidence ;
+                                                                               aida:confidenceValue  "0.234"^^xsd:double ;
+                                                                               aida:system           ldc:testSystem
+                                                                             ] ;
+                                                           aida:keyFrame     "keyframe ID" ;
+                                                           aida:source       "NYT_ENG_20181231_03" ;
+                                                           aida:system       ldc:testSystem
+                                                         ] ;
+                            aida:containedJustification  [ a                    aida:VideoJustification ;
+                                                           aida:channel         aida:VideoJustificationChannelBoth ;
+                                                           aida:confidence      [ a                     aida:Confidence ;
+                                                                                  aida:confidenceValue  "0.789"^^xsd:double ;
+                                                                                  aida:system           ldc:testSystem
+                                                                                ] ;
+                                                           aida:endTimestamp    "9.876"^^xsd:double ;
+                                                           aida:source          "SOME_OTHER_VIDEO" ;
+                                                           aida:startTimestamp  "4.566"^^xsd:double ;
+                                                           aida:system          ldc:testSystem
+                                                         ] ;
+                            aida:containedJustification  [ a                    aida:AudioJustification ;
+                                                           aida:confidence      [ a                     aida:Confidence ;
+                                                                                  aida:confidenceValue  "0.789"^^xsd:double ;
+                                                                                  aida:system           ldc:testSystem
+                                                                                ] ;
+                                                           aida:endTimestamp    "9.876"^^xsd:double ;
+                                                           aida:source          "NYT_ENG_201181231" ;
+                                                           aida:startTimestamp  "4.566"^^xsd:double ;
+                                                           aida:system          ldc:testSystem
+                                                         ] ;
+                            aida:containedJustification  [ a                aida:ShotVideoJustification ;
+                                                           aida:confidence  [ a                     aida:Confidence ;
+                                                                              aida:confidenceValue  "0.487"^^xsd:double ;
+                                                                              aida:system           ldc:testSystem
+                                                                            ] ;
+                                                           aida:shot        "some shot ID" ;
+                                                           aida:source      "SOME_VIDEO" ;
+                                                           aida:system      ldc:testSystem
+                                                         ] ;
+                            aida:system                  ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+ldc:assertion-5  a        rdf:Statement , aida:ArgumentStatement ;
+        rdf:object        ldc:E779954.00004 ;
+        rdf:predicate     ldcOnt:Personnel.Elect_Place ;
+        rdf:subject       ldc:V779961.00010 ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "0.589"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:justifiedBy  [ a                            aida:CompoundJustification ;
+                            aida:confidence              [ a                     aida:Confidence ;
+                                                           aida:confidenceValue  "0.543"^^xsd:double ;
+                                                           aida:system           ldc:testSystem
+                                                         ] ;
+                            aida:containedJustification  _:b0 , _:b1 ;
+                            aida:system                  ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+ldc:testSystem  a  aida:System .
+
+######################################################
+# Blanks: These blank nodes are nested in more than one statement above
+######################################################
+
+_:b0    a                        aida:TextJustification ;
+        aida:confidence          [ a                     aida:Confidence ;
+                                   aida:confidenceValue  "0.973"^^xsd:double ;
+                                   aida:system           ldc:testSystem
+                                 ] ;
+        aida:endOffsetInclusive  "143"^^xsd:int ;
+        aida:source              "NYT_ENG_20181231" ;
+        aida:sourceDocument      "NYT_PARENT_ENG_20181231_03" ;
+        aida:startOffset         "42"^^xsd:int ;
+        aida:system              ldc:testSystem .
+
+_:b1    a                 aida:ImageJustification ;
+        aida:boundingBox  [ a                            aida:BoundingBox ;
+                            aida:boundingBoxLowerRightX  "167"^^xsd:int ;
+                            aida:boundingBoxLowerRightY  "98"^^xsd:int ;
+                            aida:boundingBoxUpperLeftX   "123"^^xsd:int ;
+                            aida:boundingBoxUpperLeftY   "45"^^xsd:int
+                          ] ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "0.123"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:source       "NYT_ENG_20181231_03" ;
+        aida:system       ldc:testSystem .

@@ -1,0 +1,167 @@
+@prefix ldcOnt: <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/LDCOntology#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix aida:  <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/ontologies/InterchangeOntology#> .
+@prefix ldc:   <https://raw.githubusercontent.com/NextCenturyCorporation/AIDA-Interchange-Format/master/java/src/main/resources/com/ncc/aif/LdcAnnotations#> .
+
+ldc:cluster-1  a        aida:SameAsCluster ;
+        aida:prototype  ldc:entity-1 ;
+        aida:system     ldc:testSystem .
+
+ldc:cluster-2  a        aida:SameAsCluster ;
+        aida:prototype  ldc:event-1 ;
+        aida:system     ldc:testSystem .
+
+ldc:cluster-3  a        aida:SameAsCluster ;
+        aida:prototype  ldc:relation-1 ;
+        aida:system     ldc:testSystem .
+
+ldc:entity-1  a      aida:Entity ;
+        aida:system  ldc:testSystem .
+
+ldc:assertion-1  a        rdf:Statement , aida:TypeStatement ;
+        rdf:object        ldcOnt:PER ;
+        rdf:predicate     rdf:type ;
+        rdf:subject       ldc:entity-1 ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "1.0"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "12"^^xsd:int ;
+                            aida:source              "document-2" ;
+                            aida:sourceDocument      "document-1" ;
+                            aida:startOffset         "6"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+ldc:event-1  a       aida:Event ;
+        aida:system  ldc:testSystem .
+
+ldc:assertion-2  a        rdf:Statement , aida:TypeStatement ;
+        rdf:object        ldcOnt:Conflict.Attack ;
+        rdf:predicate     rdf:type ;
+        rdf:subject       ldc:event-1 ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "1.0"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "20"^^xsd:int ;
+                            aida:source              "document-4" ;
+                            aida:sourceDocument      "document-3" ;
+                            aida:startOffset         "10"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+[ a                 rdf:Statement , aida:ArgumentStatement ;
+  rdf:object        ldc:entity-1 ;
+  rdf:predicate     ldcOnt:Conflict.Attack_Target ;
+  rdf:subject       ldc:event-1 ;
+  aida:confidence   [ a                     aida:Confidence ;
+                      aida:confidenceValue  "1.0"^^xsd:double ;
+                      aida:system           ldc:testSystem
+                    ] ;
+  aida:justifiedBy  _:b0 ;
+  aida:system       ldc:testSystem
+] .
+
+ldc:relation-1  a    aida:Relation ;
+        aida:system  ldc:testSystem .
+
+ldc:assertion-3  a        rdf:Statement , aida:TypeStatement ;
+        rdf:object        ldcOnt:GeneralAffiliation.ArtifactPoliticalOrganizationReligiousAffiliation ;
+        rdf:predicate     rdf:type ;
+        rdf:subject       ldc:relation-1 ;
+        aida:confidence   [ a                     aida:Confidence ;
+                            aida:confidenceValue  "1.0"^^xsd:double ;
+                            aida:system           ldc:testSystem
+                          ] ;
+        aida:justifiedBy  [ a                        aida:TextJustification ;
+                            aida:confidence          [ a                     aida:Confidence ;
+                                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                                       aida:system           ldc:testSystem
+                                                     ] ;
+                            aida:endOffsetInclusive  "28"^^xsd:int ;
+                            aida:source              "document-6" ;
+                            aida:sourceDocument      "document-5" ;
+                            aida:startOffset         "14"^^xsd:int ;
+                            aida:system              ldc:testSystem
+                          ] ;
+        aida:system       ldc:testSystem .
+
+[ a                 rdf:Statement , aida:ArgumentStatement ;
+  rdf:object        ldc:entity-1 ;
+  rdf:predicate     ldcOnt:GeneralAffiliation.ArtifactPoliticalOrganizationReligiousAffiliation_EntityOrFiller ;
+  rdf:subject       ldc:relation-1 ;
+  aida:confidence   [ a                     aida:Confidence ;
+                      aida:confidenceValue  "1.0"^^xsd:double ;
+                      aida:system           ldc:testSystem
+                    ] ;
+  aida:justifiedBy  _:b0 ;
+  aida:system       ldc:testSystem
+] .
+
+ldc:testSystem  a  aida:System .
+
+[ a                   aida:ClusterMembership ;
+  aida:cluster        ldc:cluster-1 ;
+  aida:clusterMember  ldc:entity-1 ;
+  aida:confidence     [ a                     aida:Confidence ;
+                        aida:confidenceValue  "1.0"^^xsd:double ;
+                        aida:system           ldc:testSystem
+                      ] ;
+  aida:system         ldc:testSystem
+] .
+
+[ a                   aida:ClusterMembership ;
+  aida:cluster        ldc:cluster-2 ;
+  aida:clusterMember  ldc:event-1 ;
+  aida:confidence     [ a                     aida:Confidence ;
+                        aida:confidenceValue  "1.0"^^xsd:double ;
+                        aida:system           ldc:testSystem
+                      ] ;
+  aida:system         ldc:testSystem
+] .
+
+[ a                   aida:ClusterMembership ;
+  aida:cluster        ldc:cluster-3 ;
+  aida:clusterMember  ldc:relation-1 ;
+  aida:confidence     [ a                     aida:Confidence ;
+                        aida:confidenceValue  "1.0"^^xsd:double ;
+                        aida:system           ldc:testSystem
+                      ] ;
+  aida:system         ldc:testSystem
+] .
+
+######################################################
+# Blanks: These blank nodes are nested in more than one statement above
+######################################################
+
+_:b0    a                            aida:CompoundJustification ;
+        aida:confidence              [ a                     aida:Confidence ;
+                                       aida:confidenceValue  "1.0"^^xsd:double ;
+                                       aida:system           ldc:testSystem
+                                     ] ;
+        aida:containedJustification  [ a                        aida:TextJustification ;
+                                       aida:confidence          [ a                     aida:Confidence ;
+                                                                  aida:confidenceValue  "1.0"^^xsd:double ;
+                                                                  aida:system           ldc:testSystem
+                                                                ] ;
+                                       aida:endOffsetInclusive  "4"^^xsd:int ;
+                                       aida:source              "source1" ;
+                                       aida:sourceDocument      "source1sourceDocument" ;
+                                       aida:startOffset         "0"^^xsd:int ;
+                                       aida:system              ldc:testSystem
+                                     ] ;
+        aida:system                  ldc:testSystem .
